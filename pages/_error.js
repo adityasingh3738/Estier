@@ -20,20 +20,22 @@ function Error({ statusCode }) {
           ? 'This page could not be found.' 
           : 'Something went wrong. Please try again later.'}
       </p>
-      <a 
-        href="/" 
+      <button
+        onClick={() => window.location.href = '/'}
         style={{ 
           marginTop: '2rem', 
           padding: '12px 24px', 
           backgroundColor: '#7C4DFF', 
           color: 'white', 
           textDecoration: 'none', 
+          border: 'none',
           borderRadius: '8px',
-          fontWeight: '600'
+          fontWeight: '600',
+          cursor: 'pointer'
         }}
       >
         Go Home
-      </a>
+      </button>
     </div>
   );
 }

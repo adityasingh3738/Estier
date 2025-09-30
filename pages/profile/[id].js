@@ -24,6 +24,7 @@ export default function Profile() {
     if (id) {
       fetchUserProfile();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchUserProfile = async () => {

@@ -19,6 +19,7 @@ export default function Quiz() {
 
   useEffect(() => {
     fetchQuiz();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function Quiz() {
     if (timeLeft === 0 && !results) {
       handleNextQuestion();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeLeft, results, quizData]);
 
   const fetchQuiz = async () => {
