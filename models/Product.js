@@ -1,0 +1,36 @@
+import mongoose from 'mongoose';
+
+const ProductSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  description: String,
+  price: {
+    type: Number,
+    required: true,
+  },
+  image: String,
+  type: {
+    type: String,
+    enum: ['merch', 'ticket'],
+    required: true,
+  },
+  category: String,
+  artist: String,
+  event: {
+    date: Date,
+    venue: String,
+    city: String,
+  },
+  stock: {
+    type: Number,
+    default: 0,
+  },
+  allowPairing: {
+    type: Boolean,
+    default: false,
+  },
+}, { timestamps: true });
+
+export default mongoose.models.Product || mongoose.model('Product', ProductSchema);

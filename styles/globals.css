@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  background-color: #0A0A0A;
+  color: white;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-purple-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-mid-gray hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-dark-gray border border-gray-800 rounded-xl p-4 hover:border-primary transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply bg-dark-gray border border-gray-800 rounded-xl p-4 hover:border-primary hover:transform hover:scale-105 transition-all duration-200 cursor-pointer;
+  }
+
+  .input-field {
+    @apply w-full bg-mid-gray border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors;
+  }
+
+  .nav-link {
+    @apply text-gray-400 hover:text-primary transition-colors duration-200 font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7C4DFF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6939FF;
+}
